@@ -145,8 +145,14 @@
     <ClInclude Include="Nim.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="client_main.cpp" />
     <ClCompile Include="connectsock.cpp" />
+    <ClCompile Include="getServers.cpp" />
+    <ClCompile Include="loadInterfaceInfo.cpp" />
+    <ClCompile Include="Nim.cpp" />
     <ClCompile Include="passivesock.cpp" />
+    <ClCompile Include="playNim.cpp" />
+    <ClCompile Include="server_main.cpp" />
     <ClCompile Include="timestamp.cpp" />
     <ClCompile Include="UDP_recv.cpp" />
     <ClCompile Include="UDP_send.cpp" />
