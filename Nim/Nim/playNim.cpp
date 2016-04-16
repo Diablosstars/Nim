@@ -6,5 +6,6 @@
 
 int playNim(SOCKET s, std::string serverName, std::string host, std::string port, int player)
 {
+	std::cout << "You reached the game portion" << std::endl;
 	return 0;
 }

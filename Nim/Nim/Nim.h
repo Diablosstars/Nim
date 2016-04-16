@@ -4,9 +4,12 @@
 
 static char Nim_UDPPORT[] = "29333";			
 
-#define Nim_QUERY		"Who?"
-#define Nim_NAME		"Name="
-#define Nim_CHALLENGE	"Player="
+#define Nim_QUERY				"Who?"
+#define Nim_NAME				"Name="
+#define Nim_CHALLENGE			"Player="
+#define Nim_CHALLENGE_ACCEPTED	"YES"
+#define Nim_CHALLENGE_REJECTED	"NO"
+#define Nim_CHALLENGE_RESPONSE	"Great!"
 
 const int v4AddressSize = 16;
 const int MAX_INTERFACES = 20;
