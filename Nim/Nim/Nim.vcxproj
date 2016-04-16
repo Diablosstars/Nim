@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="connectsock.cpp" />
+    <ClCompile Include="loadInterfaceInfo.cpp" />
     <ClCompile Include="passivesock.cpp" />
     <ClCompile Include="timestamp.cpp" />
     <ClCompile Include="UDP_recv.cpp" />
