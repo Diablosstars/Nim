@@ -1,0 +1,14 @@
+﻿  wait.cpp
+  UDP_send.cpp
+  UDP_recv.cpp
+  timestamp.cpp
+  server_main.cpp
+  playNim.cpp
+  passivesock.cpp
+  Nim.cpp
+  loadInterfaceInfo.cpp
+  getServers.cpp
+  connectsock.cpp
+  client_main.cpp
+  Generating Code...
+  Nim.vcxproj -> C:\Users\acamp\Documents\GitHub\Nim\Nim\Debug\Nim.exe
