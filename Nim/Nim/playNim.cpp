@@ -4,7 +4,7 @@
 #include <string>
 
 
-int playNim(SOCKET s, std::string serverName, std::string host, std::string port, int player)
+int playNim(SOCKET s, std::string serverName, std::string host, std::string port, int numPiles, int numRocks)
 {
 	std::cout << "You reached the game portion" << std::endl;
 	return 0;

@@ -1,10 +1,10 @@
-﻿  Nim.cpp
+﻿  server_main.cpp
   Generating Code...
   Compiling...
-  server_main.cpp
   playNim.cpp
   loadInterfaceInfo.cpp
   getServers.cpp
   client_main.cpp
+c:\users\acamp\documents\github\nim\nim\nim\client_main.cpp(125): error C2660: 'playNim': function does not take 5 arguments
+  Nim.cpp
   Generating Code...
-  Nim.vcxproj -> C:\Users\acamp\Documents\GitHub\Nim\Nim\Debug\Nim.exe

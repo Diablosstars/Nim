@@ -19,15 +19,7 @@ const int WAIT_TIME = 60;
 const int MAX_SEND_BUF = 2048;
 const int MAX_RECV_BUF = 2048;
 const int MAX_SERVERS = 100;
-//const int X_PLAYER = 1;
-//const int O_PLAYER = 2;
-//const int ABORT = -1;
-//const int noWinner = 0;
-//const int xWinner = 1;
-//const int oWinner = 2;
-//const int TIE = 3;
-//
-//static char board[10];
+
 
 struct interfaceInfo {
 	char IPAddress[v4AddressSize];
@@ -54,6 +46,6 @@ int wait(SOCKET, int, int);
 int loadInterfaceInfo(interfaceInfo[]);
 char* timestamp();
 int getServers(SOCKET, char*, char*, ServerStruct[]);
-int playNim(SOCKET, std::string, std::string, std::string, int);
+int playNim(SOCKET, std::string, std::string, std::string, int, int);
 int server_main(int, char*[], std::string);
 int client_main(int, char*[], std::string);

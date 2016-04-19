@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <WinSock2.h>
+#include <random>
 
 int server_main(int argc, char *argv[], std::string playerName)
 {
@@ -47,14 +48,33 @@ int server_main(int argc, char *argv[], std::string playerName)
 				UDP_send(s, buf, strlen(buf) + 1, (char*)host.c_str(), (char*)port.c_str());
 				// Play the game. 
 				//int winner = playNim(s, (char*)playerName.c_str(), (char*)host.c_str(), (char*)port.c_str(), O_PLAYER);
-				playNim(s, (char*)playerName.c_str(), (char*)host.c_str(), (char*)port.c_str(), 1);
-				finished = true;
+
+				std::random_device rd;     // only used once to initialise (seed) engine
+				std::mt19937 rng(rd());    // random-number engine used (Mersenne-Twister in this case)
+				std::uniform_int_distribution<int> piles(3, 9); // guaranteed unbiased
+				std::uniform_int_distribution<int> rocks(1, 20); // guaranteed unbiased
+
+				int numberPiles = piles(rng);
+				int numberRocks = rocks(rng);
+
+				std::string rockPileConfiguration;
+				rockPileConfiguration[0] = numberPiles;
+
+
+				for (int i = 0; i < numberPiles; i++)
+				{
+
+				}
+
+				playNim(s, (char*)playerName.c_str(), (char*)host.c_str(), (char*)port.c_str(), numberPiles, numberRocks);
 			}
 			else
 			{
 				strcpy_s(buf, Nim_CHALLENGE_REJECTED);
 				UDP_send(s, buf, strlen(buf) + 1, (char*)host.c_str(), (char*)port.c_str());
 			}
+
+			finished = true;
 		}
 
 		if (!finished) {

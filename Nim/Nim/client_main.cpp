@@ -121,7 +121,6 @@ int client_main(int argc, char *argv[], std::string playerName)
 						UDP_send(s, buf, strlen(buf) + 1, (char*)host.c_str(), (char*)port.c_str());
 
 						// Challenge has been accepted, play the game.  
-						//int winner = playNim(s, serverName, host, port, 1);
 						playNim(s, serverName, host, port, 1);
 					}
 				}
