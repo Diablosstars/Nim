@@ -47,26 +47,13 @@ int server_main(int argc, char *argv[], std::string playerName)
 				strcpy_s(buf, Nim_CHALLENGE_ACCEPTED);
 				UDP_send(s, buf, strlen(buf) + 1, (char*)host.c_str(), (char*)port.c_str());
 				// Play the game. 
-				//int winner = playNim(s, (char*)playerName.c_str(), (char*)host.c_str(), (char*)port.c_str(), O_PLAYER);
 
-				std::random_device rd;     // only used once to initialise (seed) engine
-				std::mt19937 rng(rd());    // random-number engine used (Mersenne-Twister in this case)
-				std::uniform_int_distribution<int> piles(3, 9); // guaranteed unbiased
-				std::uniform_int_distribution<int> rocks(1, 20); // guaranteed unbiased
-
-				int numberPiles = piles(rng);
-				int numberRocks = rocks(rng);
-
-				std::string rockPileConfiguration;
-				rockPileConfiguration[0] = numberPiles;
+				char rockPileConfig[] = "50102030201";
+				strcpy_s(buf, rockPileConfig);
+				UDP_send(s, buf, strlen(buf) + 1, (char*)host.c_str(), (char*)port.c_str());
 
 
-				for (int i = 0; i < numberPiles; i++)
-				{
-
-				}
-
-				playNim(s, (char*)playerName.c_str(), (char*)host.c_str(), (char*)port.c_str(), numberPiles, numberRocks);
+				playNim(s, (char*)playerName.c_str(), (char*)host.c_str(), (char*)port.c_str(), rockPileConfig, 1);
 			}
 			else
 			{

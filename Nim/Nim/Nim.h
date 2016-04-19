@@ -46,6 +46,35 @@ int wait(SOCKET, int, int);
 int loadInterfaceInfo(interfaceInfo[]);
 char* timestamp();
 int getServers(SOCKET, char*, char*, ServerStruct[]);
-int playNim(SOCKET, std::string, std::string, std::string, int, int);
+int playNim(SOCKET, std::string, std::string, std::string, std::string, int);//edit for sending rock pile config
 int server_main(int, char*[], std::string);
 int client_main(int, char*[], std::string);
+void sendChat();
+void sendMove();
+
+
+//std::random_device rd;     // only used once to initialise (seed) engine
+//std::mt19937 rng(rd());    // random-number engine used (Mersenne-Twister in this case)
+//std::uniform_int_distribution<int> piles(3, 9); // guaranteed unbiased
+//std::uniform_int_distribution<int> rocks(1, 20); // guaranteed unbiased
+//
+//int numberPiles = piles(rng);
+//int numberRocks = rocks(rng);
+//
+//std::string rockPileConfig;
+//
+//rockPileConfig[0] = numberPiles;
+//
+//for (int i = 0; i < numberPiles; i++)
+//{
+//	if (numberRocks < 10)
+//	{
+//		rockPileConfig[i] = '0';
+//		rockPileConfig[i + 1] = numberRocks;
+//		i++;
+//	}
+//	else
+//	{
+//		rockPileConfig[i] = numberRocks;
+//	}
+//}

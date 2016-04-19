@@ -103,7 +103,7 @@ int client_main(int argc, char *argv[], std::string playerName)
 			int len = UDP_send(s, buf, strlen(buf) + 1, (char*)host.c_str(), (char*)port.c_str());
 
 			int status = wait(s, WAIT_TIME, 0);
-
+			std::string rockPileConfig;
 			if (status > 0)
 			{
 				int recv = 0;
@@ -120,8 +120,18 @@ int client_main(int argc, char *argv[], std::string playerName)
 						strcpy_s(buf, Nim_CHALLENGE_RESPONSE);
 						UDP_send(s, buf, strlen(buf) + 1, (char*)host.c_str(), (char*)port.c_str());
 
+						recv = 0;
+
+						wait(s, 2, 0);
+						recv = UDP_recv(s, recvBuf, MAX_RECV_BUF, broadcastAddress, Nim_UDPPORT);
+
+						if (recv > 0)
+						{
+							rockPileConfig = recvBuf;
+						}
+
 						// Challenge has been accepted, play the game.  
-						playNim(s, serverName, host, port, 1);
+						playNim(s, serverName, host, port, rockPileConfig, -1);
 					}
 				}
 			}
