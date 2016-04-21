@@ -27,7 +27,7 @@ const int MAX_SERVERS = 100;
 //const int oWinner = 2;
 //const int TIE = 3;
 //
-//static char board[10];
+//static char board[10]
 
 struct interfaceInfo {
 	char IPAddress[v4AddressSize];
